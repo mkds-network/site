@@ -1,0 +1,20 @@
+[
+    {
+        "rank": 1,
+        "player": "TestPlayer",
+        "country": "TestCountry",
+        "time": "1:16:789",
+        "std": "GD",
+        "video": null,
+        "isCr?": true
+    },
+    {
+        "rank": 2,
+        "player": "FakePlayer",
+        "country": "TestCountry",
+        "time": "1:17:001",
+        "std": "MA",
+        "video": null,
+        "isCr?": false
+    }
+]

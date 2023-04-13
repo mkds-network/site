@@ -1,0 +1,56 @@
+{
+    "Non-PRB" : [
+        {
+            "id": "test-track",
+            "name": "Test Track",
+            "3lapWR": "1:23:456",
+            "FlapWR": "26:777",
+            "3lapHolder": "TestPlayer",
+            "FlapHolder": "FakePlayer"
+        },
+        {
+            "id": "dev-circuit",
+            "name": "Developer Circuit",
+            "3lapWR": "1:42:424",
+            "FlapWR": "33:222",
+            "3lapHolder": "Pikalex04",
+            "FlapHolder": "Xanix"
+        },
+        {
+            "id": "snes-not-real-garden-2",
+            "name": "SNES Not Real Garden 2",
+            "3lapWR": "1:06:543",
+            "FlapWR": "21:123",
+            "3lapHolder": "Xanix",
+            "FlapHolder": "Pikalex04"
+        }
+    ],
+    "PRB" : [
+        {
+            "id": "test-track",
+            "name": "Test Track",
+            "3lapWR": "1:16:789",
+            "FlapWR": "23:999",
+            "3lapHolder": "TestPlayer",
+            "FlapHolder": "FakePlayer"
+        },
+        {
+            "id": "snes-not-real-garden-2",
+            "name": "SNES Not Real Garden 2",
+            "3lapWR": "98:76:543",
+            "FlapWR": "18:159",
+            "3lapHolder": "Xanix",
+            "FlapHolder": "Pikalex04"
+        }
+    ],
+    "SC" : [
+        {
+            "id": "test-track",
+            "name": "Test Track",
+            "3lapWR": "1:16:789",
+            "FlapWR": null,
+            "3lapHolder": "TestPlayer",
+            "FlapHolder": null
+        }
+    ]
+}

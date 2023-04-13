@@ -1,0 +1,38 @@
+[
+    {
+        "rank": 1,
+        "player": "Pikalex04",
+        "country": "DevIsland",
+        "time": "1:42:424",
+        "std": "GD",
+        "video": null,
+        "isCr?": true
+    },
+    {
+        "rank": 2,
+        "player": "Xanix",
+        "country": "DevIsland",
+        "time": "1:42:521",
+        "std": "MA",
+        "video": null,
+        "isCr?": false
+    },
+    {
+        "rank": 3,
+        "player": "FakePlayer",
+        "country": "TestCountry",
+        "time": "1:42:782",
+        "std": "MB",
+        "video": null,
+        "isCr?": true
+    },
+    {
+        "rank": 4,
+        "player": "TestPlayer",
+        "country": "TestCountry",
+        "time": "99:59:999",
+        "std": "NW",
+        "video": null,
+        "isCr?": false
+    }
+]
