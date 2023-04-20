@@ -1,0 +1,38 @@
+[
+    {
+        "id": "test-track",
+        "name": "Test Track",
+        "3lap": {
+            "WR": "1:23:456",
+            "Holder": "TestPlayer"
+        },
+        "Flap": {
+            "WR": "26:777",
+            "Holder": "FakePlayer"
+        }
+    },
+    {
+        "id": "dev-circuit",
+        "name": "Developer Circuit",
+        "3lap": {
+            "WR": "1:42:424",
+            "Holder": "Pikalex04"
+        },
+        "Flap": {
+            "WR": "33:222",
+            "Holder": "Xanix"
+        } 
+    },
+    {
+        "id": "snes-not-real-garden-2",
+        "name": "SNES Not Real Garden 2",
+        "3lap": {
+            "WR": "1:06:543",
+            "Holder": "Xanix"
+        },
+        "Flap": {
+            "WR": "21:123",
+            "Holder": "Pikalex04"
+        }
+    }
+]

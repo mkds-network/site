@@ -1,0 +1,14 @@
+[
+    {
+        "id": "test-track",
+        "name": "Test Track",
+        "3lap": {
+            "WR": "1:16:789",
+            "Holder": "TestPlayer"
+        },
+        "Flap": {
+            "WR": null,
+            "Holder": null
+        }
+    }
+]

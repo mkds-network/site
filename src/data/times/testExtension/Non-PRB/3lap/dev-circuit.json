@@ -4,7 +4,6 @@
         "player": "Pikalex04",
         "country": "DevIsland",
         "time": "1:42:424",
-        "std": "GD",
         "video": null,
         "isCr?": true
     },
@@ -13,7 +12,6 @@
         "player": "Xanix",
         "country": "DevIsland",
         "time": "1:42:521",
-        "std": "MA",
         "video": null,
         "isCr?": false
     },
@@ -22,7 +20,6 @@
         "player": "FakePlayer",
         "country": "TestCountry",
         "time": "1:42:782",
-        "std": "MB",
         "video": null,
         "isCr?": true
     },
@@ -31,7 +28,6 @@
         "player": "TestPlayer",
         "country": "TestCountry",
         "time": "99:59:999",
-        "std": "NW",
         "video": null,
         "isCr?": false
     }
