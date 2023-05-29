@@ -1,7 +1,8 @@
 <template>
-    <div class="main">
-        <span>Hi, I'm the main component !</span>
-        <router-view/>
+    <div id="main">
+        <div id="main-view">
+            <router-view/>
+        </div>
     </div>
 </template>
   
@@ -12,4 +13,20 @@ export default {
 </script>
   
 <style scoped>
+#main {
+    height: 100%;
+    background-image: url("../assets/liliana.jpeg");
+    overflow: auto
+}
+
+#main-view {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    margin: 225px 40px 40px 40px;
+    padding: 25px;
+}
+
+.ranking-table {
+  width:100%
+}
 </style>  

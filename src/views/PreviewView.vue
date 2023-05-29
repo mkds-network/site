@@ -6,7 +6,7 @@
       <a :href="`/site/times/${ this.extension }/PRB`">PRB</a>
       <a :href="`/site/times/${ this.extension }/SC`">SC</a>
     </div>
-    <table border="1">
+    <table id="ranking-table-preview">
       <thead>
         <tr>
           <th>Track</th>
@@ -80,3 +80,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#ranking-table-preview {
+  width: 100%;
+}
+</style>
