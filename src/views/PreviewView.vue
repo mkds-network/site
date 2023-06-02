@@ -1,10 +1,23 @@
 <template>
-  <div class="preview">
-    <span>Hi, I'm the preview view !</span>
-    <div>
-      <a :href="`/site/times/${ this.extension }/Non-PRB`">Non-PRB</a>
-      <a :href="`/site/times/${ this.extension }/PRB`">PRB</a>
-      <a :href="`/site/times/${ this.extension }/SC`">SC</a>
+  <div id="preview">
+    <p id="preview-text" v-if="this.extension === 'testExtension'">
+      Hi !<br><br>
+      This is a test extension to allow the developers to make sure everything is going well on the website.
+      If you’re not one of them, consider this an easter egg, congratulations on finding it !
+    </p>
+    <p id="preview-text" v-else>
+      <!-- The text of the future extensions will go there -->
+    </p>
+    <div id="row-category" class="row">
+      <div class="col col-category">
+        <a :href="`/site/times/${ this.extension }/Non-PRB`" class="category-link" v-bind:class="[this.category === 'Non-PRB' ? 'category-link-selected' : '']">Non-PRB</a>
+      </div>
+      <div class="col col-category">
+        <a :href="`/site/times/${ this.extension }/PRB`" class="category-link" v-bind:class="[this.category === 'PRB' ? 'category-link-selected' : '']">PRB</a>
+      </div>
+      <div class="col col-category">
+        <a :href="`/site/times/${ this.extension }/SC`" class="category-link" v-bind:class="[this.category === 'SC' ? 'category-link-selected' : '']">SC</a>
+      </div>
     </div>
     <table id="ranking-table-preview">
       <thead>
@@ -30,7 +43,7 @@
                   track: `${ track.id }`
                 }
               }"
-            >See details for 3lap</router-link>
+            >See rankings for 3lap</router-link>
           </td>
         </tr>
         <tr>
@@ -46,7 +59,7 @@
                   track: `${ track.id }`
                 }
               }"
-            >See details for Flap</router-link>
+            >See rankings for Flap</router-link>
           </td>
         </tr>
       </tbody>
@@ -82,7 +95,46 @@ export default {
 </script>
 
 <style scoped>
+#preview {
+  overflow-x:auto;
+}
+
+#row-category {
+  width: 60%;
+  margin: 25px auto 25px auto;
+}
+.col-category {
+  text-align: center;
+  color: lime;
+}
+
+.category-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.category-link-selected {
+  color: red;
+  font-weight: bold;
+}
+
+.category-link:hover {
+  color: lime;
+}
+
+table, th, tr, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+th {
+  color: black;
+  background-color: rgba(255,255,255,0.7);
+}
+
 #ranking-table-preview {
   width: 100%;
+  text-align: center;
 }
 </style>

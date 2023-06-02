@@ -4,16 +4,16 @@
             <div class="navigation-label">Times</div>
             <div class="navigation-items">
                 <div class="navigation-item">
-                    <router-link class="navigation-link" to="/">Home</router-link>
-                </div>
-                <div class="navigation-item">
                     <router-link class="navigation-link"  to="/site/times/testExtension/Non-PRB">Test</router-link>
                 </div>
             </div>
         </div>
         <div class="navigation-group">
-            <div class="navigation-label">Other</div>
+            <div class="navigation-label">Others</div>
             <div class="navigation-items">
+                <div class="navigation-item">
+                    <router-link class="navigation-link" to="/">Home</router-link>
+                </div>
                 <div class="navigation-item">
                     <router-link class="navigation-link" to="/">Dev</router-link>
                 </div>
@@ -29,10 +29,10 @@ export default {
 </script>
   
 <style scoped>
-#navigation {   
+#navigation {
+    position: sticky;
+    top: 0px;
     padding: 15px;
-    height: 100%;
-    background-color: black;
     color: white;
 }
 
