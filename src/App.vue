@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid" style="height:100%;">
-    <div class="row" style="height:100%;">
-      <div class="col-1" style="padding: 0px">
+    <div class="row" style="min-height:100%;">
+      <div class="col-1" style="padding: 0px; min-height:100%; background-color: black;">
         <NavigationComponent></NavigationComponent>
       </div>
-      <div class="col-11" style="padding: 0px;">
+      <div class="col-11" style="padding: 0px; min-height:100%">
         <MainComponent></MainComponent>
       </div>
     </div>
