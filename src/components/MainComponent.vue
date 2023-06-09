@@ -15,7 +15,7 @@ export default {
 <style scoped>
 #main {
     height: 100%;
-    background-image: url("../assets/liliana.jpeg");
+    background-image: url("../assets/PipePlaza1920.png");
     background-attachment: fixed;
     overflow: auto
 }

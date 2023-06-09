@@ -1,6 +1,8 @@
 <template>
   <div id="trackDetails">
-    <span>Hi, I'm the track details view !</span>
+    <div id="trackText">
+      <b>{{ this.$route.params.track }}</b> : {{ this.$route.params.format }} in {{ this.$route.params.category }}
+    </div>
     <table id="ranking-table-details">
       <thead>
         <tr>
@@ -15,10 +17,10 @@
           <tr>
               <td class="td-limited-width">{{ time['rank'] }}</td>
               <td>{{ time['player'] }}</td>
-              <td v-if="time['video'] != null" v-bind:style="[time['isCr?'] ? {'color':'lime'} : {'color':'inherit'}]">
+              <td v-if="time['video'] != null" v-bind:class="[time['isCr?'] ? 'gold' : '']">
                   <a :href="`${ time['video'] }`" target="_blank" v-bind:style="'color: inherit'">{{ time['time'] }}</a>
               </td>
-              <td v-else v-bind:style="[time['isCr?'] ? {'color':'lime'} : {'color':'inherit'}]">{{ time['time'] }}</td>
+              <td v-else v-bind:class="[time['isCr?'] ? 'gold' : '']">{{ time['time'] }}</td>
               <td v-if="Object.keys(time).includes('std')" class="td-limited-width" v-bind:class="['std' + time['std'][0]]">{{ time['std'] }}</td>
               <td>{{ time['country'] }}</td>
           </tr>
@@ -57,6 +59,11 @@ export default {
   overflow-x:auto;
 }
 
+#trackText {
+  text-align: center;
+  padding: 10px 0 20px 0;
+}
+
 table, th, tr, td {
   border: 1px solid white;
   border-collapse: collapse;
@@ -76,39 +83,43 @@ th {
   width: 50px;
 }
 
+.gold {
+  color: gold;
+}
+
 .stdG {
-  background-color: rgba(0,255,0,0.5);
+  background-color: rgba(24,191,245,0.7);
 }
 
 .stdM {
-  background-color: rgba(255,0,0,0.5);
+  background-color: rgba(0,153,255,0.7);
 }
 
 .stdT {
-  background-color: rgba(0,0,255,0.5);
+  background-color: rgba(48,111,209,0.7);
 }
 
 .stdH {
-  background-color: rgba(255,255,0,0.5);
+  background-color: rgba(114,98,231,0.7);
 }
 
 .stdE {
-  background-color: rgba(255,0,255,0.5);
+  background-color: rgba(180,78,180,0.7);
 }
 
 .stdA {
-  background-color: rgba(127,0,0,0.5);
+  background-color: rgba(189,70,130,0.7);
 }
 
 .stdI {
-  background-color: rgba(0,127,0,0.5);
+  background-color: rgba(211,69,92,0.7);
 }
 
 .stdB {
-  background-color: rgba(0,0,127,0.5);
+  background-color: rgba(234,57,63,0.7);
 }
 
 .stdN {
-  background-color: rgba(127,127,0,0.5);
+  background-color: rgba(201,44,32,0.7);
 }
 </style>

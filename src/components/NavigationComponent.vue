@@ -1,6 +1,14 @@
 <template>
     <nav class="container" id="navigation">
         <div class="navigation-group">
+            <div class="navigation-label">Basic</div>
+            <div class="navigation-items">
+                <div class="navigation-item">
+                    <router-link class="navigation-link"  to="/">Home</router-link>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-group">
             <div class="navigation-label">Times</div>
             <div class="navigation-items">
                 <div class="navigation-item">
@@ -11,9 +19,6 @@
         <div class="navigation-group">
             <div class="navigation-label">Others</div>
             <div class="navigation-items">
-                <div class="navigation-item">
-                    <router-link class="navigation-link" to="/">Home</router-link>
-                </div>
                 <div class="navigation-item">
                     <router-link class="navigation-link" to="/">Dev</router-link>
                 </div>
@@ -58,6 +63,6 @@ export default {
 }
 
 .navigation-link:hover {
-    color: lime;
+    color: #0fc7f5;
 }
 </style>

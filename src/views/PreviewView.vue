@@ -34,7 +34,7 @@
           <td>{{ track['3lap']['WR'] }}</td>
           <td>{{ track['3lap']['Holder'] }}</td>
           <td>
-            <router-link v-if="track['3lap']['WR'] != null" :to="
+            <router-link class="seeDetailsLink" v-if="track['3lap']['WR'] != null" :to="
               { name: 'trackDetails',
                 params: { 
                   extension: `${ this.extension }`,
@@ -50,7 +50,7 @@
           <td>{{ track['Flap']['WR'] }}</td>
           <td>{{ track['Flap']['Holder'] }}</td>
           <td>
-            <router-link v-if="track['Flap']['WR'] != null" :to="
+            <router-link class="seeDetailsLink" v-if="track['Flap']['WR'] != null" :to="
               { name: 'trackDetails',
                 params: { 
                   extension: `${ this.extension }`,
@@ -105,7 +105,7 @@ export default {
 }
 .col-category {
   text-align: center;
-  color: lime;
+  color: #0fc7f5;
 }
 
 .category-link {
@@ -119,9 +119,14 @@ export default {
   font-weight: bold;
 }
 
-.category-link:hover {
-  color: lime;
+.seeDetailsLink {
+  color: white;
 }
+
+.category-link:hover, .seeDetailsLink:hover {
+  color: #0fc7f5;
+}
+
 
 table, th, tr, td {
   border: 1px solid white;
