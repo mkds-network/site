@@ -1,14 +1,12 @@
 <template>
-  <div class="container-fluid" style="height:100%;">
-    <div class="row" style="min-height:100%;">
-      <div class="col-1" style="padding: 0px; min-height:100%; background-color: black;">
+  <div id="component-container">
+      <div id="navigation-component">
         <NavigationComponent></NavigationComponent>
       </div>
-      <div class="col-11" style="padding: 0px; min-height:100%">
+      <div id="main-component">
         <MainComponent></MainComponent>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -20,7 +18,7 @@ export default {
   components : {
     NavigationComponent,
     MainComponent
-  }
+  },
 }
 </script>
 
@@ -40,7 +38,22 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+#component-container {
+  display: flex;
+  min-height:100%;
+}
+
+#navigation-component {
+  min-width: 150px;
+  min-height: 100%;
+  background-color: black;
+}
+
+#main-component {
+  width: 100%;
+  min-height: 100%
 }
 </style>

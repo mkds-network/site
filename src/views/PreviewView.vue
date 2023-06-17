@@ -134,7 +134,6 @@ export default {
   cursor: pointer;
 }
 
-
 table, th, tr, td {
   border: 1px solid white;
   border-collapse: collapse;
