@@ -12,7 +12,7 @@
             <div class="navigation-label">Times</div>
             <div class="navigation-items">
                 <div class="navigation-item">
-                    <router-link class="navigation-link"  to="/site/times/testExtension/Non-PRB">Test</router-link>
+                    <router-link class="navigation-link"  to="/times/testExtension/Non-PRB">Test</router-link>
                 </div>
             </div>
         </div>
