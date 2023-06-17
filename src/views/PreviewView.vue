@@ -10,60 +10,62 @@
     </p>
     <div id="row-category" class="row">
       <div class="col col-category">
-        <a :href="`/site/times/${ this.extension }/Non-PRB`" class="category-link" v-bind:class="[this.category === 'Non-PRB' ? 'category-link-selected' : '']">Non-PRB</a>
+        <span v-on:click="changeCategory('Non-PRB')" class="category-link" v-bind:class="[this.category === 'Non-PRB' ? 'category-link-selected' : '']">Non-PRB</span>
       </div>
       <div class="col col-category">
-        <a :href="`/site/times/${ this.extension }/PRB`" class="category-link" v-bind:class="[this.category === 'PRB' ? 'category-link-selected' : '']">PRB</a>
+        <span v-on:click="changeCategory('PRB')" class="category-link" v-bind:class="[this.category === 'PRB' ? 'category-link-selected' : '']">PRB</span>
       </div>
       <div class="col col-category">
-        <a :href="`/site/times/${ this.extension }/SC`" class="category-link" v-bind:class="[this.category === 'SC' ? 'category-link-selected' : '']">SC</a>
+        <span v-on:click="changeCategory('SC')" class="category-link" v-bind:class="[this.category === 'SC' ? 'category-link-selected' : '']">SC</span>
       </div>
     </div>
-    <table id="ranking-table-preview">
-      <thead>
-        <tr>
-          <th>Track</th>
-          <th>WR</th>
-          <th>Holder</th>
-          <th>See more</th>
-        </tr>
-      </thead>
-      <tbody v-for="track in this.preview" v-bind:key="track.id">
-        <tr>
-          <td rowspan="2">{{ track['name'] }}</td>
-          <td>{{ track['3lap']['WR'] }}</td>
-          <td>{{ track['3lap']['Holder'] }}</td>
-          <td>
-            <router-link class="seeDetailsLink" v-if="track['3lap']['WR'] != null" :to="
-              { name: 'trackDetails',
-                params: { 
-                  extension: `${ this.extension }`,
-                  category: `${ this.category }`,
-                  format: '3lap',
-                  track: `${ track.id }`
-                }
-              }"
-            >See rankings for 3lap</router-link>
-          </td>
-        </tr>
-        <tr>
-          <td>{{ track['Flap']['WR'] }}</td>
-          <td>{{ track['Flap']['Holder'] }}</td>
-          <td>
-            <router-link class="seeDetailsLink" v-if="track['Flap']['WR'] != null" :to="
-              { name: 'trackDetails',
-                params: { 
-                  extension: `${ this.extension }`,
-                  category: `${ this.category }`,
-                  format: 'Flap',
-                  track: `${ track.id }`
-                }
-              }"
-            >See rankings for Flap</router-link>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div id="preview-table">
+      <table id="ranking-table-preview">
+        <thead>
+          <tr>
+            <th>Track</th>
+            <th>WR</th>
+            <th>Holder</th>
+            <th>See more</th>
+          </tr>
+        </thead>
+        <tbody v-for="track in this.preview" v-bind:key="track.id">
+          <tr>
+            <td rowspan="2">{{ track['name'] }}</td>
+            <td>{{ track['3lap']['WR'] }}</td>
+            <td>{{ track['3lap']['Holder'] }}</td>
+            <td>
+              <router-link class="seeDetailsLink" v-if="track['3lap']['WR'] != null" :to="
+                { name: 'trackDetails',
+                  params: { 
+                    extension: `${ this.extension }`,
+                    category: `${ this.category }`,
+                    format: '3lap',
+                    track: `${ track.id }`
+                  }
+                }"
+              >See rankings for 3lap</router-link>
+            </td>
+          </tr>
+          <tr>
+            <td>{{ track['Flap']['WR'] }}</td>
+            <td>{{ track['Flap']['Holder'] }}</td>
+            <td>
+              <router-link class="seeDetailsLink" v-if="track['Flap']['WR'] != null" :to="
+                { name: 'trackDetails',
+                  params: { 
+                    extension: `${ this.extension }`,
+                    category: `${ this.category }`,
+                    format: 'Flap',
+                    track: `${ track.id }`
+                  }
+                }"
+              >See rankings for Flap</router-link>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
   
@@ -82,10 +84,13 @@ export default {
   },
   methods: {
       getPreviewData : async function () {
-          const route = useRoute()
-          this.preview = await import(`../data/times/${ route.params.extension }/${ route.params.category }/preview.json`).then(module => {
+          this.preview = await import(`../data/times/${ this.extension }/${ this.category }/preview.json`).then(module => {
               return module.default;
           });
+      },
+      changeCategory($category) {
+        this.category = $category;
+        this.getPreviewData();
       }
   },
   async created(){
@@ -95,13 +100,14 @@ export default {
 </script>
 
 <style scoped>
-#preview {
+
+#preview-table {
   overflow-x:auto;
 }
 
 #row-category {
   width: 60%;
-  margin: 25px auto 25px auto;
+  margin: 15px auto 15px auto;
 }
 .col-category {
   text-align: center;
@@ -111,7 +117,7 @@ export default {
 .category-link {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .category-link-selected {
@@ -125,6 +131,7 @@ export default {
 
 .category-link:hover, .seeDetailsLink:hover {
   color: #0fc7f5;
+  cursor: pointer;
 }
 
 

@@ -1,9 +1,10 @@
 <template>
-  <div id="trackDetails">
-    <div id="trackText">
+  <div id="track-details">
+    <div id="track-text">
       <b>{{ this.$route.params.track }}</b> : {{ this.$route.params.format }} in {{ this.$route.params.category }}
     </div>
-    <table id="ranking-table-details">
+    <div id="track-table">
+      <table id="ranking-table-details">
       <thead>
         <tr>
           <th>Rank</th>
@@ -18,7 +19,7 @@
               <td class="td-limited-width">{{ time['rank'] }}</td>
               <td>{{ time['player'] }}</td>
               <td v-if="time['video'] != null" v-bind:class="[time['isCr?'] ? 'gold' : '']">
-                  <a :href="`${ time['video'] }`" target="_blank" v-bind:style="'color: inherit'">{{ time['time'] }}</a>
+                  <a :href="`${ time['video'] }`" target="_blank" v-bind:class="'track-details-video-link'">{{ time['time'] }}</a>
               </td>
               <td v-else v-bind:class="[time['isCr?'] ? 'gold' : '']">{{ time['time'] }}</td>
               <td v-if="Object.keys(time).includes('std')" class="td-limited-width" v-bind:class="['std' + time['std'][0]]">{{ time['std'] }}</td>
@@ -26,6 +27,7 @@
           </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </template>
     
@@ -55,13 +57,13 @@ export default {
 </script>
 
 <style scoped>
-#trackDetails {
-  overflow-x:auto;
-}
-
-#trackText {
+#track-text {
   text-align: center;
   padding: 10px 0 20px 0;
+}
+
+#track-table {
+  overflow-x: auto;
 }
 
 table, th, tr, td {
@@ -81,6 +83,14 @@ th {
 
 .td-limited-width {
   width: 50px;
+}
+
+.track-details-video-link {
+  color: inherit
+}
+
+.track-details-video-link:hover {
+  color: #0fc7f5;
 }
 
 .gold {

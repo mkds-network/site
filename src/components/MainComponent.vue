@@ -15,15 +15,18 @@ export default {
 <style scoped>
 #main {
     height: 100%;
-    background-image: url("../assets/PipePlaza1920.png");
-    background-attachment: fixed;
+    background: url("../assets/PipePlaza1920.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     overflow: auto
 }
 
 #main-view {
     background-color: rgba(0,0,0,0.7);
     color: white;
-    margin: 225px 40px 40px 40px;
+    margin: 40px;
     padding: 25px;
 }
 
