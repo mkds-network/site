@@ -14,6 +14,9 @@
                 <div class="navigation-item">
                     <router-link class="navigation-link"  to="/times/testExtension/Non-PRB">Test</router-link>
                 </div>
+                <div class="navigation-item">
+                    <router-link class="navigation-link"  to="/times/wifi">Wi-Fi Strat</router-link>
+                </div>
             </div>
         </div>
         <div class="navigation-group">

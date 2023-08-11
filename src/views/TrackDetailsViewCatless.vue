@@ -1,6 +1,6 @@
 <template>
   <div id="track-details">
-    <h1>{{ this.$route.params.track }}: {{ this.$route.params.format }} in {{ this.$route.params.category }}</h1>
+    <h1><h1>{{ this.$route.params.track }}: {{ this.$route.params.format }}</h1></h1>
   </div>
   <div>
     <div class="table-border">
@@ -66,7 +66,7 @@ export default {
   methods: {
     getTrackData: async function () {
       const route = useRoute()
-      this.times = await import(`../data/times/${route.params.extension}/${route.params.category}/${route.params.format}/${route.params.track}.json`).then(module => {
+      this.times = await import(`../data/times/${route.params.extension}/${route.params.format}/${route.params.track}.json`).then(module => {
         return module.default;
       });
     }

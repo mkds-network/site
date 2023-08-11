@@ -8,17 +8,6 @@
     <p id="preview-text" v-else>
       <!-- The text of the future extensions will go there -->
     </p>
-    <div id="row-category" class="row">
-      <div class="col col-category">
-        <span v-on:click="changeCategory('Non-PRB')" class="category-link" v-bind:class="[this.category === 'Non-PRB' ? 'category-link-selected' : '']">Non-PRB</span>
-      </div>
-      <div class="col col-category">
-        <span v-on:click="changeCategory('PRB')" class="category-link" v-bind:class="[this.category === 'PRB' ? 'category-link-selected' : '']">PRB</span>
-      </div>
-      <div class="col col-category">
-        <span v-on:click="changeCategory('SC')" class="category-link" v-bind:class="[this.category === 'SC' ? 'category-link-selected' : '']">SC</span>
-      </div>
-    </div>
     <div id="preview-table">
       <table id="ranking-table-preview">
         <thead>
@@ -36,10 +25,9 @@
             <td>{{ track['3lap']['Holder'] }}</td>
             <td>
               <router-link class="seeDetailsLink" v-if="track['3lap']['WR'] != null" :to="
-                { name: 'trackDetails',
+                { name: 'trackDetailsCatless',
                   params: { 
                     extension: `${ this.extension }`,
-                    category: `${ this.category }`,
                     format: '3lap',
                     track: `${ track.id }`
                   }
@@ -52,10 +40,9 @@
             <td>{{ track['Flap']['Holder'] }}</td>
             <td>
               <router-link class="seeDetailsLink" v-if="track['Flap']['WR'] != null" :to="
-                { name: 'trackDetails',
+                { name: 'trackDetailsCatless',
                   params: { 
                     extension: `${ this.extension }`,
-                    category: `${ this.category }`,
                     format: 'Flap',
                     track: `${ track.id }`
                   }
@@ -78,19 +65,14 @@ export default {
       const route = useRoute()
       return {
           preview: null,
-          extension: route.params.extension,
-          category: route.params.category
+          extension: route.params.extension
       }
   },
   methods: {
       getPreviewData : async function () {
-          this.preview = await import(`../data/times/${ this.extension }/${ this.category }/preview.json`).then(module => {
+          this.preview = await import(`../data/times/${ this.extension }/preview.json`).then(module => {
               return module.default;
           });
-      },
-      changeCategory($category) {
-        this.category = $category;
-        this.getPreviewData();
       }
   },
   async created(){
