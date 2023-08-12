@@ -1,53 +1,65 @@
 <template>
-  <div id="track-details">
-    <h1>{{ this.$route.params.track }}: {{ this.$route.params.format }} in {{ this.$route.params.category }}</h1>
-  </div>
-  <div>
-    <div class="table-border">
-      <table class="rankings-table">
-        <thead>
-          <tr>
-            <th class="th-limited-width">Rank</th>
-            <th>Player</th>
-            <th>Time</th>
-            <th v-if="this.times != null && Object.keys(this.times[0]).includes('std')">Std</th>
-            <th class="th-limited-width">#</th>
-            <th>Country</th>
-            <th v-if="this.times != null && Object.keys(this.times[0]).includes('date')">Date</th>
-          </tr>
-        </thead>
-        <tbody v-for="time in this.times" v-bind:key="time.rank">
-          <tr>
-            <td>{{ time['rank'] }}</td>
-            <td>{{ time['player'] }}</td>
-            <td v-if="time['video'] != null">
-              {{ time['time'] }}
-              <a :href="`${time['video'][0]}`">
-                <img :class="`${time['video'][1]} icon`">
-              </a>
-              <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder space icon' : '']">
-            </td>
-            <td v-else>
-              {{ time['time'] }}
-              <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder icon' : '']">
-            </td>
-            <td v-if="Object.keys(time).includes('std')" v-bind:class="['std' + time['std'][0]]">
-              {{ time['std'] }}
-            </td>
-            <td>
-              <img :class="`country-flag ${time['country']}`">
-            </td>
-            <td>
-              {{ time['country'] }}
-              <img v-bind:class="[time['isCr?'] ? 'country-record icon' : '']">
-            </td>
-            <td v-if="Object.keys(time).includes('date')">{{ time['date'] }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div id="track-details" class="row">
+    <h2 v-if="this.category == undefined" id="track-title"><b>{{ this.name }}</b> : {{ this.format }}</h2>
+    <h2 v-else id="track-title"><b>{{ this.name }}</b> : {{ this.format }} ({{ this.category }})</h2>
+    <div class="col-md-3 order-md-2">
+      <div id="track-statistics">
+        Hi Pika !<br><br>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit nulla dignissim dui vulputate gravida.
+          Maecenas aliquam a leo non viverra. Morbi facilisis justo erat, vel sollicitudin quam gravida vitae. Donec cursus consequat neque.
+          Aenean non pellentesque ante. Mauris imperdiet fringilla pharetra. Etiam non dui et purus lobortis viverra et eu quam.
+          <br><br>
+          Proin velit ante, fermentum at lectus nec, pretium ullamcorper ipsum. Phasellus facilisis arcu at nisi lobortis, tincidunt viverra ante lobortis.
+          In ullamcorper nec augue in tempor. Donec quis mollis justo. Nullam luctus non ex nec pellentesque. Praesent at blandit tortor.
+          In libero ex, aliquam ut imperdiet sed, imperdiet id felis. Aenean id finibus nisl. Sed semper bibendum metus non vehicula.
+        </p>
+      </div>
     </div>
-    <div>
-
+    <div class="col-md-9 order-md-1">
+      <div id="track-table">
+        <table id="rankings-table">
+          <thead>
+            <tr id="rankings-table-head">
+              <th class="limited-width">Rank</th>
+              <th>Player</th>
+              <th class="minimal-width">Time</th>
+              <th v-if="this.times != null && Object.keys(this.times[0]).includes('std')">Std</th>
+              <th class="limited-width">#</th>
+              <th class="minimal-width">Country</th>
+              <th v-if="this.times != null && Object.keys(this.times[0]).includes('date')">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="time in this.times" v-bind:key="time.rank">
+              <td>{{ time['rank'] }}</td>
+              <td>{{ time['player'] }}</td>
+              <td v-if="time['proof'] != null">
+                <span></span>{{ time['time'] }}
+                <a target="_blank" :href="`${time['proof'][0]}`">
+                  <img :class="`${time['proof'][1]} icon`" title="See Proof">
+                </a>
+                <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder space icon' : '']" title="Former World Record">
+              </td>
+              <td v-else>
+                {{ time['time'] }}
+                <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder icon' : '']" title="Former World Record">
+              </td>
+              <td v-if="Object.keys(time).includes('std')" v-bind:class="['std' + time['std'][0]]">
+                {{ time['std'] }}
+              </td>
+              <td>
+                <img :class="`country-flag ${time['country']}`">
+              </td>
+              <td style="min-width:130px;">
+                {{ time['country'] }}
+                <img v-bind:class="[time['isCr?'] ? 'country-record icon' : '']" title="Country Record">
+              </td>
+              <td v-if="Object.keys(time).includes('date')">{{ time['date'] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -59,16 +71,36 @@ import { useRoute } from 'vue-router';
 export default {
   name: 'TrackDetailsView',
   data() {
+    const route = useRoute()
     return {
       times: null,
+      name: null,
+      extension: route.params.extension,
+      category: route.params.category,
+      format: route.params.format,
+      track: route.params.track,
     }
   },
   methods: {
     getTrackData: async function () {
-      const route = useRoute()
-      this.times = await import(`../data/times/${route.params.extension}/${route.params.category}/${route.params.format}/${route.params.track}.json`).then(module => {
-        return module.default;
-      });
+      let preview = null;
+      if(this.category == undefined) {
+        this.times = await import(`../data/times/${ this.extension }/${ this.format}/${ this.track }.json`).then(module => {
+          return module.default;
+        });
+        preview = await import(`../data/times/${ this.extension }/preview.json`).then(module => {
+          return module.default;
+        });
+      }
+      else {
+        this.times = await import(`../data/times/${ this.extension }/${ this.category }/${ this.format}/${ this.track }.json`).then(module => {
+          return module.default;
+        });
+        preview = await import(`../data/times/${ this.extension }/${ this.category }/preview.json`).then(module => {
+          return module.default;
+        });
+      }
+      this.name = preview.filter(p => p.id === this.track)[0].name;
     }
   },
   async created() {
@@ -79,36 +111,55 @@ export default {
 
 <style scoped>
 #track-details {
-  margin: 8px 16px;
+  margin: 2px;
 }
 
-.rankings-table {
+#track-title {
   text-align: center;
-  width: 99%;
-  border-collapse: collapse;
-  margin: auto;
-  position: relative;
+  margin: 15px 0;
 }
 
-.table-border {
+#track-statistics {
+  overflow-x: auto;
   border-radius: 10px;
   border: thin solid white;
-  margin: 15px 10px;
-  width: 70%;
-  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  margin: 5px 0;
 }
 
-.th-limited-width {
+#track-table {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: thin solid white;
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+#rankings-table {
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+#rankings-table-head {
+  border: none;
+}
+
+.limited-width {
   width: 40px;
+}
+
+.minimal-width {
+  min-width: 135px;
 }
 
 tr {
   border-top: thin solid darkgray;
-  border-radius: 10px;
 }
 
 th {
-  padding: 6px;
+  padding: 5px;
   font-weight: bolder;
   font-size: 14px;
 }

@@ -1,9 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PreviewView from '../views/PreviewView.vue'
-import PreviewViewCatless from '../views/PreviewViewCatless.vue'
 import TrackDetailsView from '../views/TrackDetailsView.vue'
-import TrackDetailsViewCatless from '../views/TrackDetailsViewCatless.vue'
 
 const routes = [
   {
@@ -18,8 +16,8 @@ const routes = [
   },
   {
     path: '/times/:extension/',
-    name: 'previewCatless',
-    component: PreviewViewCatless
+    name: 'previewWithoutCategory',
+    component: PreviewView
   },
   {
     path: '/times/:extension/:category/:format/:track',
@@ -28,8 +26,8 @@ const routes = [
   },
   {
     path: '/times/:extension/:format/:track',
-    name: 'trackDetailsCatless',
-    component: TrackDetailsViewCatless
+    name: 'trackDetailsWithoutCategory',
+    component: TrackDetailsView
   }
 ]
 

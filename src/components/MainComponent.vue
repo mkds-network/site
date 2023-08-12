@@ -10,7 +10,8 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-        ><path d="M9 18l6-6-6-6"/></svg></div>
+            ><path d="M9 18l6-6-6-6"/></svg>
+        </div>
         <div id="close-navigation" v-on:click="closeNavigation()">
             <svg xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -21,9 +22,10 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-        ><path d="M15 18l-6-6 6-6"/></svg></div>
+            ><path d="M15 18l-6-6 6-6"/></svg>
+        </div>
         <div id="main-view">
-            <router-view/>
+            <router-view :key="$route.fullPath"/>
         </div>
     </div>
 </template>
@@ -44,7 +46,6 @@ export default {
             document.getElementById('close-navigation').style.display = 'none';
         },
         displayLarge() {
-            console.log('Large');
             document.getElementById('navigation-component').style.display = 'block';
             document.getElementById('main-view').style.padding = '12px';
             document.getElementById('main-view').style.margin = '12px';
@@ -52,7 +53,6 @@ export default {
             document.getElementById('close-navigation').style.display = 'none';
         },
         displayLittle() {
-            console.log('Little')
             document.getElementById('navigation-component').style.display = 'none';
             document.getElementById('main-view').style.padding = '12px';
             document.getElementById('main-view').style.margin = '12px';

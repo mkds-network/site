@@ -4,7 +4,7 @@
             <div class="navigation-label">Basic</div>
             <div class="navigation-items">
                 <div class="navigation-item">
-                    <router-link class="navigation-link"  to="/">Home</router-link>
+                    <router-link class="navigation-link" to="/">Home</router-link>
                 </div>
             </div>
         </div>
@@ -12,10 +12,10 @@
             <div class="navigation-label">Times</div>
             <div class="navigation-items">
                 <div class="navigation-item">
-                    <router-link class="navigation-link"  to="/times/testExtension/Non-PRB">Test</router-link>
+                    <router-link class="navigation-link" to="/times/testExtension/Non-PRB">Test</router-link>
                 </div>
                 <div class="navigation-item">
-                    <router-link class="navigation-link"  to="/times/wifi">Wi-Fi Strat</router-link>
+                    <router-link class="navigation-link" to="/times/wifi">Wi-Fi Strat</router-link>
                 </div>
             </div>
         </div>
