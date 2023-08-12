@@ -3,18 +3,17 @@
         "rank": 1,
         "player": "Pikalex04",
         "country": "DevIsland",
-        "time": "21:123",
+        "time": "16:185",
         "std": "GD",
         "proof": null,
         "isCr?": true
     },
     {
         "rank": 2,
-        "player": "TestPlayer",
-        "country": "TestCountry",
-        "time": "21:214",
+        "player": "Xanix",
+        "country": "DevIsland",
+        "time": "16:611",
         "std": "MA",
-        "proof": null,
-        "isCr?": true
+        "proof": null
     }
 ]

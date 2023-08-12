@@ -12,15 +12,14 @@
         "player": "Xanix",
         "country": "DevIsland",
         "time": "1:42:521",
-        "video": null,
-        "isCr?": false
+        "video": null
     },
     {
         "rank": 3,
         "player": "FakePlayer",
         "country": "TestCountry",
         "time": "1:42:782",
-        "video": null,
+        "proof": null,
         "isCr?": true
     },
     {
@@ -28,7 +27,6 @@
         "player": "TestPlayer",
         "country": "TestCountry",
         "time": "99:59:999",
-        "video": null,
-        "isCr?": false
+        "proof": null
     }
 ]

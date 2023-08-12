@@ -10,5 +10,17 @@
             "WR": null,
             "Holder": null
         }
+    },
+    {
+        "id": "snes-not-real-garden-2",
+        "name": "SNES Not Real Garden 2",
+        "3lap": {
+            "WR": null,
+            "Holder": null
+        },
+        "Flap": {
+            "WR": "16:185",
+            "Holder": "Pikalex04"
+        }
     }
 ]

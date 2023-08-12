@@ -5,7 +5,7 @@
         "country": "TestCountry",
         "time": "26:777",
         "std": "GD",
-        "video": null,
+        "proof": null,
         "isCr?": true
     },
     {
@@ -14,8 +14,7 @@
         "country": "TestCountry",
         "time": "26:888",
         "std": "GD",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 3,
@@ -23,7 +22,7 @@
         "country": "DevIsland",
         "time": "27:000",
         "std": "MA",
-        "video": null,
+        "proof": null,
         "isCr?": true
     }
 ]

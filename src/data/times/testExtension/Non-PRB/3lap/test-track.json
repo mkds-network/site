@@ -5,7 +5,7 @@
         "country": "TestCountry",
         "time": "1:23:456",
         "std": "GD",
-        "video": null,
+        "proof": null,
         "isCr?": true
     },
     {
@@ -14,8 +14,8 @@
         "country": "TestCountry",
         "time": "1:23:589",
         "std": "GD",
-        "video": null,
-        "isCr?": false
+        "proof": null,
+        "isFwrHolder?": true
     },
     {
         "rank": 3,
@@ -23,7 +23,7 @@
         "country": "DevIsland",
         "time": "1:23:890",
         "std": "MA",
-        "video": "https://www.youtube.com/watch?v=N72U-NFu44k",
+        "proof": ["https://www.youtube.com/watch?v=N72U-NFu44k", "video"],
         "isCr?": true
     },
     {
@@ -32,8 +32,7 @@
         "country": "DevIsland",
         "time": "1:24:125",
         "std": "MB",
-        "video": "https://www.youtube.com/watch?v=NBFuzr_GnqQ",
-        "isCr?": false
+        "proof": ["https://www.youtube.com/watch?v=NBFuzr_GnqQ", "video"]
     },
     {
         "rank": 5,
@@ -41,8 +40,9 @@
         "country": "Not-real Place",
         "time": "1:24:212",
         "std": "MC",
-        "video": null,
-        "isCr?": true
+        "proof": ["https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/333968c7-d53b-4771-8b38-74a179992e03/db95414-807e8ff9-14a6-4574-9f02-60cd65adc5a2.png/v1/fit/w_536,h_327,q_70,strp/____king_boo______by_megglesy_db95414-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzI3IiwicGF0aCI6IlwvZlwvMzMzOTY4YzctZDUzYi00NzcxLThiMzgtNzRhMTc5OTkyZTAzXC9kYjk1NDE0LTgwN2U4ZmY5LTE0YTYtNDU3NC05ZjAyLTYwY2Q2NWFkYzVhMi5wbmciLCJ3aWR0aCI6Ijw9NTM2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Rh__YxMbg0f1C_kLUIpBdDUvVfMyad-XzTstw7rN0Ts", "image"],
+        "isCr?": true,
+        "isFwrHolder?": true
     },
     {
         "rank": 6,
@@ -50,8 +50,9 @@
         "country": "Circlejerk Council",
         "time": "1:24:351",
         "std": "MD",
-        "video": null,
-        "isCr?": true
+        "proof": null,
+        "isCr?": true,
+        "isFwrHolder?": true
     },
     {
         "rank": 7,
@@ -59,8 +60,7 @@
         "country": "Not-real Place",
         "time": "1:24:856",
         "std": "TB",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 8,
@@ -68,17 +68,15 @@
         "country": "Not-real Place",
         "time": "1:25:075",
         "std": "TD",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 9,
         "player": "Kuba Kowalski",
-        "country": "Poland, obviously",
+        "country": "Not-real Place",
         "time": "1:25:422",
         "std": "HA",
-        "video": null,
-        "isCr?": true
+        "proof": null
     },
     {
         "rank": 10,
@@ -86,8 +84,7 @@
         "country": "Not-real Place",
         "time": "1:25:775",
         "std": "HD",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 11,
@@ -95,8 +92,7 @@
         "country": "Not-real Place",
         "time": "1:26:054",
         "std": "EA",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 12,
@@ -104,8 +100,7 @@
         "country": "Not-real Place",
         "time": "1:28:002",
         "std": "AA",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 13,
@@ -113,8 +108,7 @@
         "country": "Not-real Place",
         "time": "1:29:727",
         "std": "IA",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 14,
@@ -122,8 +116,7 @@
         "country": "Not-real Place",
         "time": "1:31:156",
         "std": "BA",
-        "video": null,
-        "isCr?": false
+        "proof": null
     },
     {
         "rank": 15,
@@ -131,16 +124,7 @@
         "country": "Not-real Place",
         "time": "1:33:978",
         "std": "NW",
-        "video": "https://www.youtube.com/watch?v=lRrOLTHu-ew",
-        "isCr?": false
-    },
-    {
-        "rank": 16,
-        "player": "I'mNoob",
-        "country": "Not-real Place",
-        "time": "1:34:648",
-        "std": "NW",
-        "video": "https://www.youtube.com/watch?v=lRrOLTHu-ew",
-        "isCr?": false
+        "proof": ["https://www.youtube.com/watch?v=lRrOLTHu-ew", "video"],
+        "isFwrHolder?": true
     }
 ]
