@@ -1,1 +1,0 @@
-"use strict";(self["webpackChunksite"]=self["webpackChunksite"]||[]).push([[490],{490:function(e){e.exports=JSON.parse('[{"rank":1,"player":"Xanix","country":"DevIsland","time":"98:76:543","std":"NW","proof":null,"isCr?":true}]')}}]);
