@@ -53,7 +53,7 @@
               </td>
               <td style="min-width:130px;">
                 {{ time['country'] }}
-                <img v-if="time['isCr']" class="country-record icon" title="Country Record">
+                <img v-if="time['isCr?']" class="country-record icon" title="Country Record">
               </td>
               <td v-if="Object.keys(time).includes('date')">{{ time['date'] }}</td>
             </tr>
