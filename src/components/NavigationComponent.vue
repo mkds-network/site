@@ -4,7 +4,7 @@
             <div class="navigation-label">Basic</div>
             <div class="navigation-items">
                 <div class="navigation-item">
-                    <router-link class="navigation-link" to="/">Home</router-link>
+                    <router-link class="navigation-link" to="/">News</router-link>
                 </div>
             </div>
         </div>

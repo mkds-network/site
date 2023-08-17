@@ -1,13 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import NewsView from '../views/NewsView.vue'
+import NewsArchivesView from '../views/NewsArchivesView.vue'
 import PreviewView from '../views/PreviewView.vue'
 import TrackDetailsView from '../views/TrackDetailsView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'news',
+    component: NewsView
+  },
+  {
+    path: '/:news',
+    name: 'specificNews',
+    component: NewsView
+  },
+  {
+    path: '/newsArchives',
+    name: 'newsArchives',
+    component: NewsArchivesView
   },
   {
     path: '/times/:extension/:category/',
