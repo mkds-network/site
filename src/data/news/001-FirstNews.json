@@ -1,0 +1,12 @@
+{
+    "title": "The news",
+    "date": "17/08/2023",
+    "author": "Pikalex04",
+    "mainPicture": "MarioKart.png",
+    "paragraphs": [
+        {
+            "title": "Hello",
+            "content": "Hi !"
+        }
+    ]
+}

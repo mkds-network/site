@@ -1,0 +1,20 @@
+{
+    "title": "The Test News",
+    "date": "15/08/2023",
+    "author": "Xanix",
+    "mainPicture": "MarioKart.png",
+    "paragraphs": [
+        {
+            "title": "Oh ? A curious one ?",
+            "content": "Hi ! This is a test news to allow the developers to make sure everything is going well on the website. If you're not one of them, consider this an easter egg, congratulations on finding it ! "
+        },
+        {
+            "title": "The AF",
+            "content": "The <b>Average Finish</b> is the average of a player's positions in each track they have submitted a score for. The best AF possible is 1.0000, since an average of 1 means that a player is on average 1st for each of their scores, i.e. all 64 WRs.<br>AF scores reward consistency---a single weak score can negatively affect you in a big way!<i> Your AF improves when you beat someone's scores. It worsens when someone beats your scores. This means that your AF score can fluctuate every week.</i><br><br>You can see the full Non-PRB leaderboard <a href='https://www.mariokart64.com/mkds/afn.php?cfilter=&full=on'>here</a>."
+        },
+        {
+            "title": "The ARR",
+            "content": "The <b>Average Rank Rating</b> is the average of a player's standard ranks across all tracks, based on the standards. A good score achieves a good standard rank. Each score corresponds to only one standard rank, and standards have a point value. To fill any gaps, a player is automatically given the worst standard for a missing score. The better your scores, the lower you ARR.<br> Your ARR will not change unless you beat a new standard.<i> What other players do does not affect your score, but can affect your position in this chart.</i> Certain player titles are awarded to you based on your ARR.<br> Today, in Non-PRB, we currently have : <ul><li>14 <span class='stdG'>Gods</li><li>43 <span class='stdM'>Myths</li><li>56 <span class='stdT'>Titans</li><li>99 <span class='stdH'>Heroes</li><li>152 <span class='stdE'>Experts</li><li>240 <span class='stdA'>Advanceds</li><li>270 <span class='stdI'>Intermediates</li><li>350 <span class='stdB'>Beginners</li><li>And finally, 181 <span class='stdN'>Newbies</li></ul>Pretty cool, isn't it ?"
+        }
+    ]
+}

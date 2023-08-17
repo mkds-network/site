@@ -1,8 +1,8 @@
 <template>
   <div id="preview">
     <p id="preview-text" v-if="this.extension === 'testExtension'">
-      Hi !<br><br>
-      This is a test extension to allow the developers to make sure everything is going well on the website.
+      <b>Oh ? A curious one ?</b><br><br>
+      Hi ! This is a test extension to allow the developers to make sure everything is going well on the website.
       If you're not one of them, consider this an easter egg, congratulations on finding it !
     </p>
     <p id="preview-text" v-else>
@@ -92,7 +92,7 @@ import { useRoute } from 'vue-router';
 export default {
   name: 'PreviewView',
   data() {
-    const route = useRoute()
+    const route = useRoute();
     return {
       preview: null,
       extension: route.params.extension,

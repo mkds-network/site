@@ -39,21 +39,21 @@
                 <a target="_blank" :href="`${time['proof'][0]}`">
                   <img :class="`${time['proof'][1]} icon`" title="See Proof">
                 </a>
-                <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder space icon' : '']" title="Former World Record">
+                <img v-if="time['isFwrHolder?']" class="former-world-record-holder space icon" title="Former World Record">
               </td>
               <td v-else>
                 {{ time['time'] }}
-                <img v-bind:class="[time['isFwrHolder?'] ? 'former-world-record-holder icon' : '']" title="Former World Record">
+                <img v-if="time['isFwrHolder?']" class="former-world-record-holder icon" title="Former World Record">
               </td>
               <td v-if="Object.keys(time).includes('std')" v-bind:class="['std' + time['std'][0]]">
                 {{ time['std'] }}
               </td>
               <td>
-                <img :class="`country-flag ${time['country']}`">
+                <img v-bind:src="require('../assets/countries/' + loadFlag(time.country) + '.png')" class="country-flag" >
               </td>
               <td style="min-width:130px;">
                 {{ time['country'] }}
-                <img v-bind:class="[time['isCr?'] ? 'country-record icon' : '']" title="Country Record">
+                <img v-if="time['isCr']" class="country-record icon" title="Country Record">
               </td>
               <td v-if="Object.keys(time).includes('date')">{{ time['date'] }}</td>
             </tr>
@@ -71,7 +71,7 @@ import { useRoute } from 'vue-router';
 export default {
   name: 'TrackDetailsView',
   data() {
-    const route = useRoute()
+    const route = useRoute();
     return {
       times: null,
       name: null,
@@ -101,6 +101,13 @@ export default {
         });
       }
       this.name = preview.filter(p => p.id === this.track)[0].name;
+    },
+    loadFlag(country) {
+      var countries = require.context('../assets/countries', false, /\.png$/);
+      if(!countries.keys().includes('./' + country + '.png')) {
+        return 'MissingFlag';
+      }
+      return country;
     }
   },
   async created() {
@@ -201,26 +208,6 @@ td {
   border: thin solid darkgrey;
   height: 16px;
   margin-bottom: 1px;
-}
-
-.Japan {
-  content: url('../assets/countries/Japan.png');
-}
-
-.Italy {
-  content: url('../assets/countries/Italy.png');
-}
-
-.USA {
-  content: url('../assets/countries/USA.png');
-}
-
-.Germany {
-  content: url('../assets/countries/Germany.png');
-}
-
-.Spain {
-  content: url('../assets/countries/Spain.png');
 }
 
 .space {
