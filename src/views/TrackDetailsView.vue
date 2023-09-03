@@ -206,7 +206,7 @@ td {
 
 .country-flag {
   border: thin solid darkgrey;
-  height: 16px;
+  width: 23px;
   margin-bottom: 1px;
 }
 
